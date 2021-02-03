@@ -30,7 +30,7 @@
   border-bottom: 2px solid black;
 }
 
-/* Student Layout */
+/* Student Detail Layout */
 
 .student-list {
   width: 100%;
@@ -38,7 +38,6 @@
 
 .student-profile {
   display: grid;
-
   grid-template-columns: 150px auto 50px;
   border-bottom: 1px solid rgba(201, 201, 201, 0.5);
   padding: 0.5em 1em;
@@ -68,7 +67,7 @@
 }
 
 .last-child {
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
 }
 
 .student-grades {
@@ -91,4 +90,41 @@
 .grades {
   color: black;
   margin-top: 0.2em;
+}
+
+.tag-input {
+  display: block;
+  border: none;
+  border-bottom: 2px solid #d4d4d4;
+  outline: none;
+  padding: 0.5em 0;
+  margin: 0.7em 0;
+}
+
+.tag-input:focus {
+  border-bottom: 2px solid black;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin-top: 1em;
+  margin-left: 0;
+}
+
+.tag-item {
+  background: #dddddd;
+  padding: 0.5em 0.8em;
+  margin-right: 0.5em;
+  margin-top: 0.5em;
+  border-radius: 5px;
+}
+
+span {
+  margin-right: 0.5em;
+}
+
+.fa-times-circle {
+  font-size: 15px;
 }

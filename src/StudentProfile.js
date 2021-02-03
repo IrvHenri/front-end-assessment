@@ -8,6 +8,18 @@ function StudentProfile(props) {
     toNumberedGrades.reduce((a, b) => a + b, 0) / toNumberedGrades.length;
 
   const [displayGrades, setDisplayGrades] = useState(false);
+  const [tags, setTags] = useState([]);
+
+  function addTags(event) {
+    if (event.key === "Enter" && event.target.value !== "") {
+      setTags([...tags, event.target.value]);
+      event.target.value = "";
+    }
+  }
+
+  function removeTags(index) {
+    setTags([...tags.filter((tag) => tags.indexOf(tag) !== index)]);
+  }
 
   return (
     <div className="student-profile">
@@ -35,6 +47,23 @@ function StudentProfile(props) {
               );
             })
           : null}
+        <ul className="tag-list">
+          {tags.map((tag, index) => (
+            <li className="tag-item" key={index}>
+              <span>{tag}</span>
+              <i
+                className="far fa-times-circle"
+                onClick={() => removeTags(index)}
+              ></i>
+            </li>
+          ))}
+        </ul>
+        <input
+          type="text"
+          onKeyUp={(e) => addTags(e)}
+          placeholder="Add a tag"
+          className="tag-input"
+        />
       </div>
 
       <button className="btn" onClick={() => setDisplayGrades(!displayGrades)}>
