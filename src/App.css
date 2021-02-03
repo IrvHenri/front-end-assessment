@@ -1,38 +1,94 @@
 .App {
-  text-align: center;
+  width: 80%;
+  max-width: 1000px;
+  background: #fff;
+  margin: 6rem auto;
+  max-height: 500px;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.App:hover {
+  overflow-y: scroll;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Search Field Layout */
+
+.search-field {
+  width: 95%;
+  padding: 1em 0;
+  font-size: 1em;
+  border: none;
+  border-bottom: 2px solid #d4d4d4;
+  outline: none;
+  margin-bottom: 0.5em;
+  margin-left: 1em;
+  margin-right: 0.5em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-field:focus {
+  border-bottom: 2px solid black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Student Layout */
+
+.student-list {
+  width: 100%;
+}
+
+.student-profile {
+  display: grid;
+
+  grid-template-columns: 150px auto 50px;
+  border-bottom: 1px solid rgba(201, 201, 201, 0.5);
+  padding: 0.5em 1em;
+  align-items: center;
+}
+
+.student-img {
+  align-self: start;
+  background-size: cover;
+  height: 120px;
+  width: 120px;
+  border: 2px solid #d4d4d4;
+  border-radius: 50%;
+  margin-right: 2em;
+}
+
+.student-name {
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5em;
+}
+
+.student-details {
+  color: black;
+  padding-bottom: 0.2em;
+}
+
+.last-child {
+  margin-bottom: 1rem;
+}
+
+.student-grades {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn {
+  border: none;
+  align-self: start;
+  background: #fff;
+  font-size: 2rem;
+  outline: none;
+  color: #969696;
+}
+.btn:hover {
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.grades {
+  color: black;
+  margin-top: 0.2em;
 }
