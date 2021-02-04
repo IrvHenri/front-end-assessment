@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "../App.css";
 import StudentProfile from "./StudentProfile";
 
 function StudentList({ students }) {
@@ -7,7 +7,11 @@ function StudentList({ students }) {
     <div>
       <section className="student-list">
         {students.map((student) => (
-          <StudentProfile student={student} key={student.id} />
+          <StudentProfile
+            student={student}
+            key={student.id}
+            students={students}
+          />
         ))}
       </section>
     </div>

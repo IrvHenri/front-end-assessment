@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import "./App.css";
+import "../App.css";
 
-function StudentProfile(props) {
-  const studentGrades = props.student.grades;
+function StudentProfile({ student }) {
+  const studentGrades = student.grades;
   const toNumberedGrades = studentGrades.map((grade) => Number(grade));
   const studentGradeAverage =
     toNumberedGrades.reduce((a, b) => a + b, 0) / toNumberedGrades.length;
 
   const [displayGrades, setDisplayGrades] = useState(false);
+
   const [tags, setTags] = useState([]);
 
   function addTags(event) {
@@ -17,44 +18,33 @@ function StudentProfile(props) {
     }
   }
 
-  function removeTags(index) {
-    setTags([...tags.filter((tag) => tags.indexOf(tag) !== index)]);
-  }
-
   return (
-    <div className="student-profile">
-      <img
-        src={props.student.pic}
-        alt="a robot's head"
-        className="student-img"
-      />
+    <div className="student-profile-container">
+      <img src={student.pic} alt="a robot's profile" className="student-img" />
       <div className="student-content">
         <h1 className="student-name">
-          {props.student.firstName} {props.student.lastName}
+          {student.firstName} {student.lastName}
         </h1>
-        <p className="student-details">Email: {props.student.email}</p>
-        <p className="student-details">Company: {props.student.company}</p>
-        <p className="student-details">Skill: {props.student.skill}</p>
+        <p className="student-details">Email: {student.email}</p>
+        <p className="student-details">Company: {student.company}</p>
+        <p className="student-details">Skill: {student.skill}</p>
         <p className="student-details last-child ">
-          Average: {studentGradeAverage}%{" "}
+          Average: {studentGradeAverage}%
         </p>
         {displayGrades
           ? toNumberedGrades.map((grade, index) => {
               return (
                 <p className="grades" key={index}>
-                  Test {index + 1}: {grade} %
+                  Test {index + 1}: {grade}%
                 </p>
               );
             })
           : null}
+
         <ul className="tag-list">
           {tags.map((tag, index) => (
             <li className="tag-item" key={index}>
               <span>{tag}</span>
-              <i
-                className="far fa-times-circle"
-                onClick={() => removeTags(index)}
-              ></i>
             </li>
           ))}
         </ul>

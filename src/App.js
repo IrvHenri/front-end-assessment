@@ -1,15 +1,24 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import StudentList from "./StudentList";
+import SearchForm from "./components/SearchForm";
+import StudentList from "./components/StudentList";
 
 function App() {
   const apiURL = "https://api.hatchways.io/assessment/students";
   const [students, setStudents] = useState([]);
-  const [nameSearch, setName] = useState("");
+  const [inputName, setInputName] = useState("");
+
+  function search(students) {
+    return students.filter(
+      (students) =>
+        students.firstName.toLowerCase().indexOf(inputName) > -1 ||
+        students.lastName.toLowerCase().indexOf(inputName) > -1
+    );
+  }
 
   useEffect(() => {
     loadData();
-  }, []);
+  }, [students]);
 
   const loadData = async () => {
     const response = await fetch(apiURL);
@@ -17,31 +26,14 @@ function App() {
     setStudents(data.students);
   };
 
-  function search(rows) {
-    return rows.filter(
-      (row) =>
-        row.firstName.toLowerCase().indexOf(nameSearch) > -1 ||
-        row.lastName.toLowerCase().indexOf(nameSearch) > -1
-    );
-  }
-
   return (
     <div className="App">
-      <input
-        type="text"
-        placeholder="Search by name"
-        className="search-field"
-        value={nameSearch}
-        onChange={(e) => setName(e.target.value)}
+      <SearchForm
+        students={students}
+        setStudents={setStudents}
+        inputName={inputName}
+        setInputName={setInputName}
       />
-      <input
-        type="text"
-        placeholder="Search by tag"
-        className="search-field"
-        value={nameSearch}
-        onChange={(e) => setName(e.target.value)}
-      />
-
       <StudentList students={search(students)} />
     </div>
   );

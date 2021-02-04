@@ -3,7 +3,7 @@
   max-width: 1000px;
   background: #fff;
   margin: 6rem auto;
-  max-height: 500px;
+  max-height: 50vh;
   overflow: hidden;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -12,7 +12,9 @@
   overflow-y: scroll;
 }
 
-/* Search Field Layout */
+/* =================
+Student Field Layout
+   ================= */
 
 .search-field {
   width: 95%;
@@ -22,21 +24,22 @@
   border-bottom: 2px solid #d4d4d4;
   outline: none;
   margin-bottom: 0.5em;
-  margin-left: 1em;
-  margin-right: 0.5em;
+  margin-left: 1.2em;
 }
 
 .search-field:focus {
   border-bottom: 2px solid black;
 }
 
-/* Student Detail Layout */
+/* =================
+Student Detail Layout
+   ================= */
 
 .student-list {
   width: 100%;
 }
 
-.student-profile {
+.student-profile-container {
   display: grid;
   grid-template-columns: 150px auto 50px;
   border-bottom: 1px solid rgba(201, 201, 201, 0.5);
