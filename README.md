@@ -1,6 +1,6 @@
 # Irving Henriquez
 
-Front-end take home assignment in which we had to replicate an app. Objectives included: fetch API data , render data, implement controlled forms, and filtering across multiple criteria.  
+Front-end take home assignment in which we had to replicate a studen database app. Objectives included: fetch API data , render data, implement controlled forms, and filtering across multiple criteria.  
 
 
 
