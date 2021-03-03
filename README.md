@@ -1,12 +1,11 @@
 # Irving Henriquez
 
-Front-end Assessment take home assignment
+Front-end take home assignment in which we had to replicate an app. Objectives included: fetch API data , render data, implement controlled forms, and filtering across multiple criteria.  
 
 
 
 ## Tech Stack
 
-- JavaScript
 - CSS
 - REACT
 
