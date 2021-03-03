@@ -1,10 +1,8 @@
 # Irving Henriquez
 
-Front-end Assessment
+Front-end Assessment take home assignment
 
-## Time to Complete
 
-With my full-time schedule I dedicated around 15hrs total across three evenings to complete the assessment. I unfortunately could not find a solution to the last feature.
 
 ## Tech Stack
 
@@ -28,4 +26,4 @@ With my full-time schedule I dedicated around 15hrs total across three evenings 
 
 - I will need to improve my understanding of how state is shared within an app and how to properly update it
 
-### Thank you for your time and consideration! Kind regards, Irving
+
