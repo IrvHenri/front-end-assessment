@@ -21,7 +21,7 @@ Front-end take home assignment in which we had to replicate a student database a
 
 - This assignment gave me the opportunity to test my understanding of hooks and React in general.
 
-- I have a long way to go but after this challenge I am eager to learn more state and hooks
+- I have a long way to go but after this challenge I am eager to learn more about state and hooks
 
 - I will need to improve my understanding of how state is shared within an app and how to properly update it
 
